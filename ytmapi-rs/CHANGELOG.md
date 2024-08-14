@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [0.0.12](https://github.com/yonasBSD/youtui/compare/ytmapi-rs/v0.0.11...ytmapi-rs/v0.0.12) - 2024-08-14
+
+### Fixed
+- Json::into_inner() method should be pub ([#137](https://github.com/yonasBSD/youtui/pull/137))
+
+
+
+
 ## [0.0.11](https://github.com/nick42d/youtui/compare/ytmapi-rs/v0.0.10...ytmapi-rs/v0.0.11) - 2024-08-12
 
 ### Fixed
