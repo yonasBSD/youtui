@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [0.0.13](https://github.com/yonasBSD/youtui/compare/ytmapi-rs/v0.0.12...ytmapi-rs/v0.0.13) - 2024-08-19
+
+### Fixed
+- Make the channel/artist thumbnail on playlists/albums optional ([#147](https://github.com/yonasBSD/youtui/pull/147))
+
+
+
+
 ## [0.0.12](https://github.com/nick42d/youtui/compare/ytmapi-rs/v0.0.11...ytmapi-rs/v0.0.12) - 2024-08-17
 
 ### Fixed
