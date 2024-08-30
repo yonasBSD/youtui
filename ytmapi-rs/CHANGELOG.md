@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [0.0.13](https://github.com/yonasBSD/youtui/compare/ytmapi-rs/v0.0.12...ytmapi-rs/v0.0.13) - 2024-08-30
+
+### Added
+- Refactor server, implement seek, reduce playback gaps, apply clippy suggestions, update ratatui, implement file logging, make song results order repeatable. ([#151](https://github.com/yonasBSD/youtui/pull/151))
+- [**breaking**] Mark public structs non-exhaustive - Closes [#135](https://github.com/yonasBSD/youtui/pull/135) ([#145](https://github.com/yonasBSD/youtui/pull/145))
+- _This is a significant breaking change, primarily due to  marking many structs non_exhaustive. This breakage now will save breakage in the future. In addition, significant refactoring between modules was undertaken to better organise the project.  Further to this, a small number of structs were renamed to better indicate their purpose._ 
+
+### Fixed
+- Make the channel/artist thumbnail on playlists/albums optional ([#147](https://github.com/yonasBSD/youtui/pull/147))
+
+### Other
+- Update dependencies ([#155](https://github.com/yonasBSD/youtui/pull/155))
+
+
+
+
 ## [0.0.12](https://github.com/nick42d/youtui/compare/ytmapi-rs/v0.0.11...ytmapi-rs/v0.0.12) - 2024-08-17
 
 ### Fixed
