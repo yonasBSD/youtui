@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [0.0.6](https://github.com/yonasBSD/youtui/compare/async-callback-manager/v0.0.5...async-callback-manager/v0.0.6) - 2025-04-14
+
+### Other
+- *(deps)* bump tokio in the cargo group across 1 directory ([#216](https://github.com/yonasBSD/youtui/pull/216))
+
+
+
+
+
 ## [0.0.5](https://github.com/nick42d/youtui/compare/async-callback-manager/v0.0.4...async-callback-manager/v0.0.5) - 2025-02-17
 
 ### Other

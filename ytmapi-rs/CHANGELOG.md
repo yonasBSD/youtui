@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [0.0.21](https://github.com/yonasBSD/youtui/compare/ytmapi-rs/v0.0.20...ytmapi-rs/v0.0.21) - 2025-04-14
+
+### Other
+- *(deps)* bump tokio in the cargo group across 1 directory ([#216](https://github.com/yonasBSD/youtui/pull/216))
+
+- Unit tests for playlist ([#214](https://github.com/yonasBSD/youtui/pull/214))
+
+
+
+
 ## [0.0.19](https://github.com/nick42d/youtui/compare/ytmapi-rs/v0.0.18...ytmapi-rs/v0.0.19) - 2025-02-17
 
 ### Fixed
