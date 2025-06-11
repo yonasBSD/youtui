@@ -2682,7 +2682,7 @@ dependencies = [
 
 [[package]]
 name = "json-crawler"
-version = "0.0.8"
+version = "0.0.9"
 dependencies = [
  "serde",
  "serde_json",
@@ -6786,7 +6786,7 @@ dependencies = [
 
 [[package]]
 name = "youtui"
-version = "0.0.24"
+version = "0.0.25"
 dependencies = [
  "anyhow",
  "async-callback-manager",
@@ -6856,7 +6856,7 @@ dependencies = [
 
 [[package]]
 name = "ytmapi-rs"
-version = "0.0.22"
+version = "0.0.23"
 dependencies = [
  "chrono",
  "const_format",
