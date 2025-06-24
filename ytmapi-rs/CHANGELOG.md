@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [0.2.0](https://github.com/yonasBSD/youtui/compare/ytmapi-rs/v0.1.0...ytmapi-rs/v0.2.0) - 2025-06-24
+
+### Added
+- *(ytmapi_rs)* Add continuations for search queries ([#257](https://github.com/yonasBSD/youtui/pull/257))
+
+
+### Other
+- Add doc comment for AuthToken ([#256](https://github.com/yonasBSD/youtui/pull/256))
+- [**breaking**] Refactor continuations ([#255](https://github.com/yonasBSD/youtui/pull/255))
+- _Continuable queries no longer return their ContinuationParams by default, and simplification of public client API. Continuable trait replaced with new ParseFromContinuable trait._ 
+- AuthToken no longer needs to be sealed, and fix changelog ([#254](https://github.com/yonasBSD/youtui/pull/254))
+
+
+
 ## [0.1.0](https://github.com/nick42d/youtui/compare/ytmapi-rs/v0.0.23...ytmapi-rs/v0.1.0) - 2025-06-15
 
 ### Added
