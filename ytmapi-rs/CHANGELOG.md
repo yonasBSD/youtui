@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [0.2.3](https://github.com/yonasBSD/youtui/compare/ytmapi-rs/v0.2.2...ytmapi-rs/v0.2.3) - 2025-12-18
+
+### Fixed
+- Handle MUSIC_VIDEO_TYPE_OFFICIAL_SOURCE_MUSIC in playlist results ([#314](https://github.com/yonasBSD/youtui/pull/314))
+
+
+
+
 ## [0.2.2](https://github.com/nick42d/youtui/compare/ytmapi-rs/v0.2.1...ytmapi-rs/v0.2.2) - 2025-12-10
 
 ### Other
