@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [0.0.34](https://github.com/yonasBSD/youtui/compare/youtui/v0.0.33...youtui/v0.0.34) - 2026-01-08
+
+### Added
+- Scroll text in table too ([#319](https://github.com/yonasBSD/youtui/pull/319))
+
+### Other
+- Allow effects to be testable ([#323](https://github.com/yonasBSD/youtui/pull/323))
+
+
+
+
 ## [0.0.33](https://github.com/nick42d/youtui/compare/youtui/v0.0.32...youtui/v0.0.33) - 2025-12-22
 
 ### Added
