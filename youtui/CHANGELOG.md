@@ -7,6 +7,284 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [0.0.35](https://github.com/yonasBSD/youtui/compare/youtui/v0.0.34...youtui/v0.0.35) - 2026-01-14
+
+### Added
+- make context menu depend on the currently showing main window ([#329](https://github.com/yonasBSD/youtui/pull/329))
+- Scroll text in table too ([#319](https://github.com/yonasBSD/youtui/pull/319))
+- Scroll selected items text in list when too long to fit in column. ([#312](https://github.com/yonasBSD/youtui/pull/312))
+- Put links to README auth guides into errors ([#318](https://github.com/yonasBSD/youtui/pull/318))
+- show artists for playlist search ([#310](https://github.com/yonasBSD/youtui/pull/310))
+- add flag to disable media controls ([#308](https://github.com/yonasBSD/youtui/pull/308))
+- Add playlist search ([#300](https://github.com/yonasBSD/youtui/pull/300))ord_xor_partial_ord
+- Add tabbed interface ([#297](https://github.com/yonasBSD/youtui/pull/297))
+- allow multiple backends for downloading (e.g yt-dlp) ([#273](https://github.com/yonasBSD/youtui/pull/273))
+- [**breaking**] Add GetUser queries ([#265](https://github.com/yonasBSD/youtui/pull/265))
+- _ProfileID is renamed UserChannelID_ 
+- [**breaking**] Add subscribe/unsubscribe artists queries ([#264](https://github.com/yonasBSD/youtui/pull/264))
+- _ArtistParams struct renamed GetArtist in line with most of the other result sructs. Some of its returned field types have been updated to reflect reality._ 
+- [**breaking**] Additional queries - playlists ([#260](https://github.com/yonasBSD/youtui/pull/260))
+- _Stream/Query split for GetPlaylist - into GetPlaylistTracks and GetPlaylistDetails. Same applies to GetWatchPlaylist - split to GetWatchPlaylist and GetLyricsID. lyrics module is removed and it's children moved to song module. watch_playlist module is removed and it's children went to song and playlist modules._ 
+- *(ytmapi_rs)* Allow custom authtokens to be provided ([#262](https://github.com/yonasBSD/youtui/pull/262))
+
+- *(ytmapi_rs)* [**breaking**] Add GetLibraryPodcasts and GetLibraryChannels queries ([#259](https://github.com/yonasBSD/youtui/pull/259))
+
+- _Parse and Query modules have been refactored - this changes the fully qualified path of some of the output types._ 
+- *(ytmapi_rs)* [**breaking**] Add continuations for GetLibraryUpload queries ([#258](https://github.com/yonasBSD/youtui/pull/258))
+
+- _UploadAlbum modified to reflect optional artist and year fields. TableListUploadSong modified to reflect optional album field. This also contains a breaking change to JsonCrawler - Narrowing of trait iterator types to JsonCrawlerIterator._ 
+- *(ytmapi_rs)* Add continuations for search queries ([#257](https://github.com/yonasBSD/youtui/pull/257))
+
+- [**breaking**] implement upload song query ([#239](https://github.com/yonasBSD/youtui/pull/239))
+- _AuthToken trait has been refactored - now the raw_query functions are managed elsewhere, and the AuthToken is just responsible for emmitting headers and client_version (and deserializing)._ 
+- [**breaking**] Let queries take iterators as params ([#238](https://github.com/yonasBSD/youtui/pull/238))
+- _Let queries take iterators as params ([#238](https://github.com/yonasBSD/youtui/pull/238))_ 
+- feat!(ytmapi_rs): Allow queries to be run without authentication ([#227](https://github.com/yonasBSD/youtui/pull/227))
+- Show album art ([#232](https://github.com/yonasBSD/youtui/pull/232))
+- Add shell completions with generate-completions cmdline option ([#233](https://github.com/yonasBSD/youtui/pull/233)) (Closes #47)
+- [**breaking**] Use platform media controls ([#223](https://github.com/yonasBSD/youtui/pull/223))
+- _Default keybinds modified, as they were causing a crash on windows._ 
+- [**breaking**] Add media keys as keybinds ([#221](https://github.com/yonasBSD/youtui/pull/221))
+- _Modifies default keybinds_ 
+- [**breaking**] Ability to search for songs instead of just artists - closes 153 ([#220](https://github.com/yonasBSD/youtui/pull/220))
+- _Some keybind actions have been renamed - see config.toml for more details. In addition, default keybinds for filter and sort have changed slightly to accommodate new F6 default keybind for changing search type. In addition, search entry form starts open when you open youtui._ 
+- Improve logging ([#192](https://github.com/yonasBSD/youtui/pull/192)) - resolves #129
+- configurable keyboard shortcuts ([#185](https://github.com/yonasBSD/youtui/pull/185))
+- Implement ability to move cursor within text box - closes #154 ([#182](https://github.com/yonasBSD/youtui/pull/182))
+- refactor task management and improve responsiveness ([#178](https://github.com/yonasBSD/youtui/pull/178))
+- [**breaking**] Implement continuations for GetLibraryXX Queries ([#165](https://github.com/yonasBSD/youtui/pull/165))
+- _Client::post_query method has been improved to allow params to be passed to add to URL. Return types for GetLibraryXX queries have been changed to add continuation params - please consider this API still unstable is I'm not yet sure it that's the ideal form. Pre-existing continuations module and query have been refactored to new modules._ 
+- Highlight now playing song in playlist ([#156](https://github.com/yonasBSD/youtui/pull/156))
+- Refactor server, implement seek, reduce playback gaps, apply clippy suggestions, update ratatui, implement file logging, make song results order repeatable. ([#151](https://github.com/yonasBSD/youtui/pull/151))
+- [**breaking**] Mark public structs non-exhaustive - Closes #135 ([#145](https://github.com/yonasBSD/youtui/pull/145))
+- _This is a significant breaking change, primarily due to  marking many structs non_exhaustive. This breakage now will save breakage in the future. In addition, significant refactoring between modules was undertaken to better organise the project.  Further to this, a small number of structs were renamed to better indicate their purpose._ 
+- [**breaking**] Return dates and FeedbackTokenRemoveFromHistory from GetHistoryQuery. Closes #109 ([#121](https://github.com/yonasBSD/youtui/pull/121))
+- _Changed type returned from GetHistoryQuery, removed new unused types TableListItem, TableListVideo and TableListEpisode._ 
+- [**breaking**] Implement Oauth option for TUI. Resolves #92 ([#104](https://github.com/yonasBSD/youtui/pull/104))
+- _Changed default authentication to Oauth - you will receive an error on first startup. See README.md for more details._ 
+- [**breaking**] Implement Get method requests - specifically AddHistoryItemQuery. Resolves #60 ([#107](https://github.com/yonasBSD/youtui/pull/107)), and includes fix for #106.
+- _generate_xx functions now take Client parameter. Removal of complex YtMusic constructors (functionality moved to new YtMusicBuilder), removed some public functions from RawResult. Query and AuthToken traits modified to allow for specialising by Post / Get type._ 
+- Add commandline flag to change auth type. Resolves #98 ([#99](https://github.com/yonasBSD/youtui/pull/99))
+- Implement Taste Profiles and Moods - Resolves #75 ([#97](https://github.com/yonasBSD/youtui/pull/97))
+- feat! Add oauth option for CLI back in. Resolves #89 ([#93](https://github.com/yonasBSD/youtui/pull/93))
+- [**breaking**] Handle new formats for Top Results. Resolves #87 ([#88](https://github.com/yonasBSD/youtui/pull/88))
+- _New field 'message' added to ErrorKind::Parsing to improve error output._ 
+- feat! Move convenience functions behind feature gate and add documentation. Resolves #76 ([#81](https://github.com/yonasBSD/youtui/pull/81))
+- Implment mechanism to force use of tls selection, and utilise new mechanism in youtui - resolves #30 ([#80](https://github.com/yonasBSD/youtui/pull/80))
+- [**breaking**] Allow specialisation of queries depending on the Token ([#79](https://github.com/yonasBSD/youtui/pull/79))
+- _Modifies Query and ParseFrom traits to introduce AuthToken type parameter. process_json function moved outside impl as well._ 
+- Implement DeleteUploadEntity ([#73](https://github.com/yonasBSD/youtui/pull/73))
+- [**breaking**] Implement get library upload queries - resolves #66 ([#70](https://github.com/yonasBSD/youtui/pull/70))
+- _New variant UploadSong added to TableListItem - this can occur when parsing History where you have recently played an uploaded song._ 
+- Implement EditSongLibraryStatus (Resolves #63) ([#64](https://github.com/yonasBSD/youtui/pull/64))
+- [**breaking**] Implement History queries and refactor 'playlist' result types ([#59](https://github.com/yonasBSD/youtui/pull/59)) - Resolves #58
+- _AlbumParams other versions removed, AlbumParams like_status removed, replaced with new field library_status, AlbumLikeStatus renamed to InLikedSongs, ParseTarget for errors modified - only types now Array or Other(String), module YoutubeResult and usage of ResultCore and YoutubeResult trait removed._ 
+- feat(api)! Implement library queries - resolves #56 ([#57](https://github.com/yonasBSD/youtui/pull/57))
+- [**breaking**] Added Playlist query functions to API
+- _AuthToken deserialization method correctly renamed, track count field on AlbumParams changed to free text, removed ProcessedResult::parse and Parse trait (replaced by new ParseInto trait), removed public inner of LyricsID
+
+* Skeleton for new GetPlaylist query
+* Add additional playlist query skeletons
+* Implement CLI function to process json files
+* Add missing files
+* Improve generics for query, to improve CLI
+* Link together Query and Parse traits (deprecate Parse and replace with ParseFrom)
+* Change trait privacy, implement proof of concept for simplified cli query function
+* Refactor ProcessedResult to avoid leaking implementation details
+* Update all ParseFrom impls
+* Refactor queries from cli
+* Fixed pretty print of queries in cli
+* Comment wrapping, and cleaning up lints
+* Check in rustfmt options
+* Change to workspace structure - resolves rust-analyzer issues with ytmapi-rs tests
+* Simplify rust test action, thanks to new workspace structure
+* Update tests to new syntax for processing outside json
+* Implement new format for get album - resolves #48
+* Allow null description for new get-albums format
+* Neaten old get_album parsing function
+* Formatting
+* Linting
+* More formatting
+* Implement get_playlists - old version
+* Implement get_playlists - new version
+* Implement create and delete playlist
+* Implement test case for more complex create playlist scenario
+* Implement builder for create playlist query
+* Remove boilerplate from YoutubeID implementations
+* Implement RemovePlaylistItems
+* Implement Add and Edit, and add tests_ 
+- Remove OpenSSL dependency on Linux. Resolves #42 ([#44](https://github.com/yonasBSD/youtui/pull/44))
+
+### Fixed
+- Correct tokio features enabled ([#332](https://github.com/yonasBSD/youtui/pull/332))
+- Improve docs/logging to prevent symphonia 0.5.5 m4a issue ([#317](https://github.com/yonasBSD/youtui/pull/317))
+- adjust table list offset when applying filter ([#305](https://github.com/yonasBSD/youtui/pull/305))
+- Prevent early kill of yt-dlp process and add additional logging for downloader ([#302](https://github.com/yonasBSD/youtui/pull/302))
+- dont download webm with native downloader ([#285](https://github.com/yonasBSD/youtui/pull/285))
+- prevent downloads continually retying ([#279](https://github.com/yonasBSD/youtui/pull/279))
+- Temporarily resolve download failures with native downloader ([#276](https://github.com/yonasBSD/youtui/pull/276))
+- Logging shouldnt fail when error messages occur in parallel ([#244](https://github.com/yonasBSD/youtui/pull/244))
+- [**breaking**] Update oauth to latest method ([#241](https://github.com/yonasBSD/youtui/pull/241))
+- _Methods used to create oauth tokens have been updated to reflect the need for Client ID and Client Secret._ 
+- [**breaking**] Update GetArtistQuery ([#212](https://github.com/yonasBSD/youtui/pull/212))
+- _Update GetArtistQuery ([#212](https://github.com/yonasBSD/youtui/pull/212))_ 
+- Not able to move up/down on sort menu (Resolves #201) ([#204](https://github.com/yonasBSD/youtui/pull/204))
+- Bump rusty_ytdl version ([#198](https://github.com/yonasBSD/youtui/pull/198)) - closes #196
+- Use a unique identifier to add albums instead of the album name. Closes #12. ([#183](https://github.com/yonasBSD/youtui/pull/183))
+- [**breaking**] Update default auth method - closes #179 ([#181](https://github.com/yonasBSD/youtui/pull/181))
+- _Youtui default auth method has changed from OAuth to Browser._ 
+- [**breaking**] Make album optional for songs search. Closes #174 ([#176](https://github.com/yonasBSD/youtui/pull/176))
+- _album field on SearchResultSong is now optional, removed public ways to create custom error from json_crawler (CrawlerError::array_size_from_context, JsonCrawlerIterator::get_context and JsonCrawlerArrayIterContext struct)_ 
+- Add way to supply potoken ([#170](https://github.com/yonasBSD/youtui/pull/170))
+- Resolve panic from api search / improve panic handling ([#161](https://github.com/yonasBSD/youtui/pull/161))
+- Choose 'Highest' audio quality by default ([#150](https://github.com/yonasBSD/youtui/pull/150)) - resolves #143
+- Move to new rusty_ytdl version (reduces number of downloading 403 errors), and add new scheduled test for downloading ([#134](https://github.com/yonasBSD/youtui/pull/134))
+- Oauth refresh can no longer get cancelled ([#124](https://github.com/yonasBSD/youtui/pull/124))
+- Fix unable to play songs that had a retried download ([#120](https://github.com/yonasBSD/youtui/pull/120))
+- Resolve cant skip if current track is in error ([#119](https://github.com/yonasBSD/youtui/pull/119)) - Resolves #118
+- Fix all songs causing crash with 'UnrecognisedFormat', and subset of songs causing crash with 'End of stream'. Downloads will now retry up to 5 times. (Resolves #113, #95) ([#115](https://github.com/yonasBSD/youtui/pull/115))
+- youtui: Correctly use rustls over openssl ([#78](https://github.com/yonasBSD/youtui/pull/78))
+- Resolve visual glitch with table heading #52 ([#53](https://github.com/yonasBSD/youtui/pull/53))
+
+### Other
+- release ([#321](https://github.com/yonasBSD/youtui/pull/321))
+- Update non-reqwest deps ([#328](https://github.com/yonasBSD/youtui/pull/328))
+- add starting point for unit tests to other browsers ([#325](https://github.com/yonasBSD/youtui/pull/325))
+- Migrate Browser to testable effects and make effect equality and debug implementations feature gated ([#324](https://github.com/yonasBSD/youtui/pull/324))
+- Allow effects to be testable ([#323](https://github.com/yonasBSD/youtui/pull/323))
+- release ([#316](https://github.com/yonasBSD/youtui/pull/316))
+- *(youtui)* release v0.0.32 ([#306](https://github.com/yonasBSD/youtui/pull/306))
+
+- Add additional yt-dlp downloader logging ([#309](https://github.com/yonasBSD/youtui/pull/309))
+- Additional logging of song play process ([#307](https://github.com/yonasBSD/youtui/pull/307))
+- release ([#299](https://github.com/yonasBSD/youtui/pull/299))
+- Update edition ([#298](https://github.com/yonasBSD/youtui/pull/298))
+- *(youtui)* release v0.0.30 ([#293](https://github.com/yonasBSD/youtui/pull/293))
+
+- Refactor song downloader to reduce nesting ([#292](https://github.com/yonasBSD/youtui/pull/292))
+- *(youtui)* release v0.0.29 ([#290](https://github.com/yonasBSD/youtui/pull/290))
+
+- *(youtui)* release v0.0.28 ([#281](https://github.com/yonasBSD/youtui/pull/281))
+
+- release ([#275](https://github.com/yonasBSD/youtui/pull/275))
+- Add clippy and rustfmt, fix cd trigger ([#274](https://github.com/yonasBSD/youtui/pull/274))
+- release ([#251](https://github.com/yonasBSD/youtui/pull/251))
+- *(deps)* bump tracing-subscriber ([#268](https://github.com/yonasBSD/youtui/pull/268))
+
+- [**breaking**] Refactor continuations ([#255](https://github.com/yonasBSD/youtui/pull/255))
+- _Continuable queries no longer return their ContinuationParams by default, and simplification of public client API. Continuable trait replaced with new ParseFromContinuable trait._ 
+- Update README.md ([#253](https://github.com/yonasBSD/youtui/pull/253))
+- Fix small typos, and bump vernum for ytmapi-rs ([#252](https://github.com/yonasBSD/youtui/pull/252))
+- release ([#248](https://github.com/yonasBSD/youtui/pull/248))
+- Revert "chore: release ([#247](https://github.com/yonasBSD/youtui/pull/247))" ([#249](https://github.com/yonasBSD/youtui/pull/249))
+- release ([#247](https://github.com/yonasBSD/youtui/pull/247))
+- Revert "chore: release ([#236](https://github.com/yonasBSD/youtui/pull/236))" ([#245](https://github.com/yonasBSD/youtui/pull/245))
+- release ([#236](https://github.com/yonasBSD/youtui/pull/236))
+- release ([#231](https://github.com/yonasBSD/youtui/pull/231))
+- Tidy imports for auto group and granularity ([#234](https://github.com/yonasBSD/youtui/pull/234))
+- [**breaking**] Revert unneeded part of #221 ([#230](https://github.com/yonasBSD/youtui/pull/230))
+- _Removes ability to set media keys as keybinds. Instead, you should use platform media controls (and media keys are likely routed through these already)._ 
+- *(youtui)* release v0.0.23 ([#222](https://github.com/yonasBSD/youtui/pull/222))
+
+- Update README.md ([#228](https://github.com/yonasBSD/youtui/pull/228))
+- release ([#217](https://github.com/yonasBSD/youtui/pull/217))
+- Add some more unit tests - playlist ([#218](https://github.com/yonasBSD/youtui/pull/218))
+- *(deps)* bump tokio in the cargo group across 1 directory ([#216](https://github.com/yonasBSD/youtui/pull/216))
+
+- Unit tests for playlist ([#214](https://github.com/yonasBSD/youtui/pull/214))
+- release ([#208](https://github.com/yonasBSD/youtui/pull/208))
+- Update README.md ([#209](https://github.com/yonasBSD/youtui/pull/209))
+- Update deps ([#203](https://github.com/yonasBSD/youtui/pull/203))
+- Update README.md ([#202](https://github.com/yonasBSD/youtui/pull/202))
+- release ([#191](https://github.com/yonasBSD/youtui/pull/191))
+- Use latest ytmapi-rs - for release ([#199](https://github.com/yonasBSD/youtui/pull/199))
+- Use anyhow for youtui - closes #187 ([#190](https://github.com/yonasBSD/youtui/pull/190))
+- release ([#184](https://github.com/yonasBSD/youtui/pull/184))
+- Update README ([#188](https://github.com/yonasBSD/youtui/pull/188))
+- release ([#180](https://github.com/yonasBSD/youtui/pull/180))
+- release ([#177](https://github.com/yonasBSD/youtui/pull/177))
+- release ([#172](https://github.com/yonasBSD/youtui/pull/172))
+- release ([#148](https://github.com/yonasBSD/youtui/pull/148))
+- Implement podcast queries ([#159](https://github.com/yonasBSD/youtui/pull/159))
+- Update dependencies ([#155](https://github.com/yonasBSD/youtui/pull/155))
+- release ([#136](https://github.com/yonasBSD/youtui/pull/136))
+- release ([#132](https://github.com/yonasBSD/youtui/pull/132))
+- [**breaking**] Avoid leaking `serde_json::value` / move `JsonCrawler` to its own crate ([#127](https://github.com/yonasBSD/youtui/pull/127))
+- _ErrorKind's ArraySize, PathNotFoundInArray, PathsNotFound, Parsing and Navigation consilidated into single ErrorKind. Removed parse_upload_song_artists/album functions that had accidentally been marked pub. Removed Error::get_json_and_key function - moved to the ErrorKind itself._ 
+- Update readme ([#122](https://github.com/yonasBSD/youtui/pull/122))
+- release ([#117](https://github.com/yonasBSD/youtui/pull/117))
+- *(youtui)* release v0.0.10 ([#116](https://github.com/yonasBSD/youtui/pull/116))
+
+- release ([#101](https://github.com/yonasBSD/youtui/pull/101))
+- Update README.md
+- release ([#86](https://github.com/yonasBSD/youtui/pull/86))
+- Improve README.md ([#91](https://github.com/yonasBSD/youtui/pull/91)) - Closes #90
+- Update README.md
+- *(youtui)* release v0.0.7 ([#83](https://github.com/yonasBSD/youtui/pull/83))
+
+- Update README.md
+- release ([#71](https://github.com/yonasBSD/youtui/pull/71))
+- release ([#62](https://github.com/yonasBSD/youtui/pull/62))
+- Resolved application crash due to unrecognised format ([#68](https://github.com/yonasBSD/youtui/pull/68))
+- Seperate live integration tests from local tests - resolves #61 ([#65](https://github.com/yonasBSD/youtui/pull/65))
+- release ([#54](https://github.com/yonasBSD/youtui/pull/54))
+- Fix table on README
+- release ([#38](https://github.com/yonasBSD/youtui/pull/38))
+- Update dependencies ([#51](https://github.com/yonasBSD/youtui/pull/51)) - resolves #43
+- Updated README.md
+- Bumped ratatui version
+- Added PKGBUILD for AUR
+- Updated README.md
+- Update README.md
+- Updated README.md
+- updated README.md
+- Updated README.md and improved filter display
+- Updated README.md
+- Updated README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- updated README.md
+- Windows support complete
+- Updated README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Update README.md
+- Implmented GetLibraryPlaylists
+- Removed logging until dirs support improved, removed race condition from playlist.
+- Update README.md
+- Removed memory leak for playback
+- Updated README.md
+- Minor tweaks
+- Edited README.md
+- Updated demo in README
+- Implemented basics of Get Watch Playlist, implemented tests for get lyrics
+- Added demo to readme
+- Added search suggestions dropdown to search menu
+- Updated README.md
+- Implement EventHandler for UI State
+- Updated README.md
+- Updated README.md
+- Updated README.md
+- Update README.md
+- Update README.md
+- First commit to GitHub
+
+
+
+
 ## [0.0.34](https://github.com/nick42d/youtui/compare/youtui/v0.0.33...youtui/v0.0.34) - 2026-01-13
 
 ### Added
